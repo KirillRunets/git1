@@ -1,0 +1,1032 @@
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:42:37 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:44:06 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:44:06 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:44:06 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:44:06 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+23:56:49 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+23:56:49 INFO  [main] action.TriangleAction - The result of perimetr is: 5.01.70000000000000023.7802116342871597
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+00:10:13 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+00:10:13 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+00:10:13 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+09:45:52 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+09:45:52 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+09:45:52 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+09:48:34 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+09:48:34 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+09:48:34 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:21:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:21:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:23:24 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:23:24 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+12:25:07 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates
+12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+12:25:07 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 5
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 6
+12:25:07 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:25:07 INFO  [main] action.TriangleAction - The result of square is: 2.5500000000000003
+12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:25:46 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+12:25:46 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:26:51 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+12:26:51 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:26:51 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+12:26:51 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates
+12:26:51 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0
+
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:26:51 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+12:26:51 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:26:51 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:26:51 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:26:51 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:34:27 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+12:34:27 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:34:27 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+12:34:27 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates:
+12:34:27 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0
+
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:34:27 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+12:34:27 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:34:27 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:34:27 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:34:27 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:35:05 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+12:35:05 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:35:05 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+12:35:05 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates:
+12:35:05 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0
+
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:35:05 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+12:35:05 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:35:05 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:35:05 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:35:05 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:35:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 1
+12:35:42 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:35:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+12:35:42 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates:
+12:35:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 3
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0
+
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0
+
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0
+
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0
+
+12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3
+
+12:35:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+12:35:42 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:35:42 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:35:42 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:35:42 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+12:36:35 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:36:35 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates:
+12:36:35 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+12:36:35 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:36:35 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:36:35 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:36:35 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+12:37:23 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:37:23 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1
+12:37:23 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+12:37:23 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:37:23 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:37:23 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:37:23 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+12:40:52 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:40:52 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1
+12:40:52 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+12:40:52 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:40:52 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+12:42:11 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:42:11 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1
+12:42:11 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+12:42:11 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:42:11 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:42:11 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:42:11 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+12:43:19 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:43:19 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1
+12:43:19 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+12:43:19 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:43:19 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:43:19 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:43:19 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+12:45:08 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:45:08 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1
+12:45:08 DEBUG [main] validation.ValidationFile - The size of list triangles: 4
+12:45:08 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:45:08 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:45:08 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:45:08 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+12:59:24 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+12:59:24 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1
+12:59:24 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+12:59:24 INFO  [main] action.TriangleAction - The result of square is: 6.0
+12:59:24 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+13:03:17 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+13:03:17 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1
+13:03:17 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+13:03:17 INFO  [main] action.TriangleAction - The result of square is: 6.0
+13:03:17 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004
+21:54:55 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+21:54:55 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1
+21:54:55 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+21:54:55 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+21:55:25 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0
+21:55:25 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1
+21:55:25 DEBUG [main] validation.ValidationFile - The size of list triangles: 2
+21:55:25 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+21:55:25 INFO  [main] action.TriangleAction - The result of perimetr is: 5.6568542494923811.97230829233160223.7802116342871597
+23:08:12 ERROR [main] reader.TriangleDataReader - java.io.FileNotFoundException: file.test (Не удается найти указанный файл)
+23:08:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+23:08:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle
+23:12:38 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+23:12:38 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+23:46:32 INFO  [main] action.TriangleAction - The result of square is: 6.0
+23:46:32 INFO  [main] action.TriangleAction - The result of square is: 2.0
+23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle: 
+23:47:11 INFO  [main] action.TriangleAction - The result of square is: 6.0
+23:47:11 INFO  [main] action.TriangleAction - The result of square is: 2.0
+23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.
+23:59:32 INFO  [main] action.TriangleAction - The result of square is: 6.0
+23:59:32 INFO  [main] action.TriangleAction - The result of square is: 2.0
+00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.
+00:11:03 INFO  [main] action.TriangleAction - The result of square is: 6.0
+00:11:03 INFO  [main] action.TriangleAction - The result of square is: 2.0
+00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.
+00:13:17 INFO  [main] action.TriangleAction - The result of square is: 6.0
+00:13:17 INFO  [main] action.TriangleAction - The result of square is: 2.0
+00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.
+00:19:57 INFO  [main] action.TriangleAction - The result of square is: 6.0
+00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.
+00:20:19 INFO  [main] action.TriangleAction - The result of square is: 6.0
+00:20:19 INFO  [main] action.TriangleAction - The result of square is: 2.0
+00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.
+00:21:23 INFO  [main] action.TriangleAction - The result of square is: 6.0
+00:21:23 INFO  [main] action.TriangleAction - The result of square is: 7.0
+15:39:27 ERROR [main] reader.TriangleDataReader - java.io.FileNotFoundException: file\java.txt (Не удается найти указанный файл)
+15:39:27 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.
+15:40:01 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:40:26 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:40:40 INFO  [main] action.TriangleAction - The result of square is: 4.725
+15:41:16 INFO  [main] action.TriangleAction - The result of square is: 4.555
+16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:50 INFO  [main] action.TriangleAction - The result of square is: 5.404999999999999
+16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:03:09 INFO  [main] action.TriangleAction - The result of square is: 5.404999999999999
+16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0
+16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597
+17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0
+17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1
+17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2
+17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4
+17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5
+17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7
+17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.
+17:56:33 INFO  [main] creator.AbstractCreator - The lenght of triangles is a 2
+15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:26:02 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:26:02 INFO  [main] action.TriangleAction - The result of square is: 25.5
+15:27:58 INFO  [main] action.TriangleAction - The result of square is: 6.0
+15:27:58 INFO  [main] action.TriangleAction - The result of square is: 25.5
+15:27:58 INFO  [main] action.TriangleAction - The result of square is: -25.5
+15:30:40 INFO  [main] action.TriangleAction - The result of square is: -6.0
+15:30:40 INFO  [main] action.TriangleAction - The result of square is: -25.5
+15:30:40 INFO  [main] action.TriangleAction - The result of square is: 25.5
+11:38:56 INFO  [main] action.TriangleAction - The result of square is: -6.0
+11:38:56 INFO  [main] action.TriangleAction - The result of square is: -25.5
+11:38:56 INFO  [main] action.TriangleAction - The result of square is: 25.5
+11:39:04 INFO  [main] action.TriangleAction - The result of perimeter is: 4.03.4481879299133343.7802116342871597
+11:39:04 INFO  [main] action.TriangleAction - The result of perimeter is: 4.03.4481879299133343.7802116342871597
+11:40:31 ERROR [main] parser.TriangleParser - java.text.ParseException: Unparseable number: "sdf"
+11:41:06 ERROR [main] parser.TriangleParser - java.text.ParseException: Unparseable number: "asd"
+17:25:08 INFO  [main] action.TriangleAction - The result of square is: 6.0
+17:25:08 INFO  [main] action.TriangleAction - The result of square is: 25.5
+17:25:08 INFO  [main] action.TriangleAction - The result of square is: 25.5
+17:25:08 INFO  [main] action.TriangleAction - The result of square is: 25.5
+17:25:42 INFO  [main] action.TriangleAction - The result of perimeter is: 4.03.4481879299133343.7802116342871597
+17:25:42 INFO  [main] action.TriangleAction - The result of perimeter is: 4.03.4481879299133343.7802116342871597
+22:33:57 INFO  [main] action.TriangleAction - The result of square is: 6.0
+22:33:57 INFO  [main] action.TriangleAction - The result of square is: 25.5
+22:33:57 INFO  [main] action.TriangleAction - The result of square is: 25.5
+22:33:57 INFO  [main] action.TriangleAction - The result of square is: 25.5
+22:34:23 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176613.4481879299133344.6141087980237305
+22:34:23 INFO  [main] action.TriangleAction - The result of perimeter is: 6.3253458403473883.28024389337134543.047950130825634
+22:34:54 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176613.4481879299133344.6141087980237305
+22:34:54 INFO  [main] action.TriangleAction - The result of perimeter is: 6.3253458403473883.28024389337134543.047950130825634
+22:36:03 ERROR [main] parser.TriangleParser - java.text.ParseException: Unparseable number: "asd"
+22:36:33 ERROR [main] parser.TriangleParser - java.text.ParseException: Unparseable number: "asd"
+22:36:52 ERROR [main] parser.TriangleParser - java.text.ParseException: Unparseable number: "asd"
+20:51:11 INFO  [main] action.TriangleAction - The result of square is: 6.0
+20:51:11 INFO  [main] action.TriangleAction - The result of square is: 25.5
+20:51:11 INFO  [main] action.TriangleAction - The result of square is: 25.5
+20:51:11 INFO  [main] action.TriangleAction - The result of square is: 25.5
+21:01:11 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:03:37 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:08:08 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:09:05 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:09:36 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:10:18 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:10:44 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:11:22 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:12:41 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:13:17 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:14:01 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:14:37 INFO  [main] creator.AbstractCreator - The length of triangles is a 1
+21:17:26 INFO  [main] creator.AbstractCreator - The length of triangles is a 1
+21:18:10 INFO  [main] creator.AbstractCreator - The length of triangles is a 1
+21:19:51 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:21:11 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:21:19 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+21:22:55 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
