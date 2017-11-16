@@ -19,12 +19,12 @@ public class TriangleAction {
     public double square(Triangle triangle) throws TriangleException {
         double square = 0.0d;
 
-        if (triangle != null || checkPointsInLine(triangle)){
+        if (triangle != null && checkPointsInLine(triangle)){
             square = 0.5 * (((triangle.getA().getX() - triangle.getC().getX()) * (triangle.getB().getY() - triangle.getC().getY())) -
                     ((triangle.getB().getX() - triangle.getC().getX()) * (triangle.getA().getY() - triangle.getC().getY())));
+            Logger.info("Square of triangle " + triangle.getId() + " is " + Math.abs(square));
         }
 
-        Logger.info("The result of square is: " + Math.abs(square));
         return Math.abs(square);
     }
 
@@ -33,19 +33,23 @@ public class TriangleAction {
     }
 
     public double perimeter(Triangle triangle) throws TriangleException {
-        double ab = 0.0d, bc = 0.0d, ac = 0.0d;
+        double ab = 0.0d;
+        double bc = 0.0d;
+        double ac = 0.0d;
+        double result = 0.0d;
 
-        if (triangle != null || checkPointsInLine(triangle)){
+        if (triangle != null && checkPointsInLine(triangle)){
             ab = sideCalculation(triangle.getA(), triangle.getB());
             bc = sideCalculation(triangle.getB(), triangle.getC());
             ac = sideCalculation(triangle.getA(), triangle.getC());
+            result = ab + bc + ac;
+            Logger.info("Perimeter of triangle " + triangle.getId() + " is " + result);
         }
 
-        Logger.info("The result of perimeter is: " + ab + bc + ac);
-        return ab + bc + ac;
+        return result;
     }
 
-    public boolean checkPointsInLine(Triangle triangle) throws TriangleException {
+    private boolean checkPointsInLine(Triangle triangle) throws TriangleException {
         if (triangle.getA().getX() == triangle.getB().getX() && triangle.getB().getX() == triangle.getC().getX())
             throw new TriangleException("Wrong location of points on X line");
         if (triangle.getA().getY() == triangle.getB().getY() && triangle.getB().getY() == triangle.getC().getY())
@@ -56,7 +60,7 @@ public class TriangleAction {
     public boolean isRightTriangle(Triangle triangle) throws TriangleException {
         double ab = 0.0d, bc = 0.0d, ac = 0.0d;
 
-        if (triangle != null || checkPointsInLine(triangle)){
+        if (triangle != null && checkPointsInLine(triangle)){
             ab = sideCalculation(triangle.getA(), triangle.getB());
             bc = sideCalculation(triangle.getB(), triangle.getC());
             ac = sideCalculation(triangle.getA(), triangle.getC());

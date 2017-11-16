@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 public class TriangleValidation {
     private final static int COORDINATE_AMOUNT = 6;
+    private final static String COORDINATE_PATTERN = "-?[\\d]+[.]?[\\d]+|[\\d]+$";
 
     private final static TriangleValidation INSTANCE = new TriangleValidation();
 
@@ -17,7 +18,7 @@ public class TriangleValidation {
     }
 
     public boolean checkWithRegex(String number){
-        Pattern p = Pattern.compile("-?[\\d]+[.]?[\\d]+|[\\d]+$");
+        Pattern p = Pattern.compile(COORDINATE_PATTERN);
         Matcher m = p.matcher(number);
         return m.matches();
     }

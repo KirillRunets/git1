@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 public class TriangleCreator extends AbstractCreator {
     private static Logger Logger = LogManager.getLogger(TriangleCreator.class);
 
-    public Triangle createTriangle(double[] coordinates) throws ValidationException {
+    public Triangle createTriangle(int id, double[] coordinates) throws ValidationException {
         Point point1 = new Point(coordinates[0], coordinates[1]);
         Point point2 = new Point(coordinates[2], coordinates[3]);
         Point point3 = new Point(coordinates[4], coordinates[5]);
@@ -18,7 +18,7 @@ public class TriangleCreator extends AbstractCreator {
         if (!TriangleValidation.getInstance().isTriangle(point1, point2, point3)) {
             throw new ValidationException("The wrong values  of points, to create a triangle.");
         }
-
-        return new Triangle(point1, point2, point3);
+        Logger.info("Triangle id is " + id);
+        return new Triangle(id, point1, point2, point3);
     }
 }

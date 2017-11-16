@@ -1,0 +1,1045 @@
+Index: src/com/runets/trainingproject/action/TriangleAction.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.runets.trainingproject.action;\n\nimport com.runets.trainingproject.entity.Point;\nimport com.runets.trainingproject.entity.Triangle;\nimport com.runets.trainingproject.exception.TriangleException;\nimport org.apache.logging.log4j.LogManager;\nimport org.apache.logging.log4j.Logger;\n\npublic class TriangleAction {\n    private static Logger Logger = LogManager.getLogger(TriangleAction.class);\n    private final static TriangleAction INSTANCE = new TriangleAction();\n\n    private TriangleAction(){}\n\n    public static TriangleAction getInstance(){\n        return INSTANCE;\n    }\n\n    public double square(Triangle triangle) throws TriangleException {\n        double square = 0.0d;\n\n        if (triangle != null || checkPointsInLine(triangle)){\n            square = 0.5 * (((triangle.getA().getX() - triangle.getC().getX()) * (triangle.getB().getY() - triangle.getC().getY())) -\n                    ((triangle.getB().getX() - triangle.getC().getX()) * (triangle.getA().getY() - triangle.getC().getY())));\n        }\n\n        Logger.info(\"The result of square is: \" + Math.abs(square));\n        return Math.abs(square);\n    }\n\n    private double sideCalculation(Point firstPoint, Point secondPoint){\n        return Math.hypot((secondPoint.getX() - firstPoint.getX()), (secondPoint.getY() - firstPoint.getY()));\n    }\n\n    public double perimeter(Triangle triangle) throws TriangleException {\n        double ab = 0.0d, bc = 0.0d, ac = 0.0d;\n\n        if (triangle != null || checkPointsInLine(triangle)){\n            ab = sideCalculation(triangle.getA(), triangle.getB());\n            bc = sideCalculation(triangle.getB(), triangle.getC());\n            ac = sideCalculation(triangle.getA(), triangle.getC());\n        }\n\n        Logger.info(\"The result of perimeter is: \" + ab + bc + ac);\n        return ab + bc + ac;\n    }\n\n    public boolean checkPointsInLine(Triangle triangle) throws TriangleException {\n        if (triangle.getA().getX() == triangle.getB().getX() && triangle.getB().getX() == triangle.getC().getX())\n            throw new TriangleException(\"Wrong location of points on X line\");\n        if (triangle.getA().getY() == triangle.getB().getY() && triangle.getB().getY() == triangle.getC().getY())\n            throw new TriangleException(\"Wrong location of points on Y line\");\n        return true;\n    }\n\n    public boolean isRightTriangle(Triangle triangle) throws TriangleException {\n        double ab = 0.0d, bc = 0.0d, ac = 0.0d;\n\n        if (triangle != null || checkPointsInLine(triangle)){\n            ab = sideCalculation(triangle.getA(), triangle.getB());\n            bc = sideCalculation(triangle.getB(), triangle.getC());\n            ac = sideCalculation(triangle.getA(), triangle.getC());\n        }\n\n        return ac == Math.hypot(ab, bc) || ab == Math.hypot(ac, bc) || bc == Math.hypot(ab, ac);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/runets/trainingproject/action/TriangleAction.java	(date 1510825330000)
++++ src/com/runets/trainingproject/action/TriangleAction.java	(revision )
+@@ -19,7 +19,7 @@
+     public double square(Triangle triangle) throws TriangleException {
+         double square = 0.0d;
+ 
+-        if (triangle != null || checkPointsInLine(triangle)){
++        if (triangle != null && checkPointsInLine(triangle)){
+             square = 0.5 * (((triangle.getA().getX() - triangle.getC().getX()) * (triangle.getB().getY() - triangle.getC().getY())) -
+                     ((triangle.getB().getX() - triangle.getC().getX()) * (triangle.getA().getY() - triangle.getC().getY())));
+         }
+@@ -33,30 +33,36 @@
+     }
+ 
+     public double perimeter(Triangle triangle) throws TriangleException {
+-        double ab = 0.0d, bc = 0.0d, ac = 0.0d;
++        double ab = 0.0d;
++        double bc = 0.0d;
++        double ac = 0.0d;
++        double result = 0.0d;
+ 
+-        if (triangle != null || checkPointsInLine(triangle)){
++        if (triangle != null && checkPointsInLine(triangle)){
+             ab = sideCalculation(triangle.getA(), triangle.getB());
+             bc = sideCalculation(triangle.getB(), triangle.getC());
+             ac = sideCalculation(triangle.getA(), triangle.getC());
++            result = ab + bc + ac;
+         }
+ 
+-        Logger.info("The result of perimeter is: " + ab + bc + ac);
+-        return ab + bc + ac;
++        Logger.info("The result of perimeter is: " + result);
++        return result;
+     }
+ 
+     public boolean checkPointsInLine(Triangle triangle) throws TriangleException {
+-        if (triangle.getA().getX() == triangle.getB().getX() && triangle.getB().getX() == triangle.getC().getX())
++        if (triangle.getA().getX() == triangle.getB().getX() && triangle.getB().getX() == triangle.getC().getX()) {
+             throw new TriangleException("Wrong location of points on X line");
+-        if (triangle.getA().getY() == triangle.getB().getY() && triangle.getB().getY() == triangle.getC().getY())
++        }
++        if (triangle.getA().getY() == triangle.getB().getY() && triangle.getB().getY() == triangle.getC().getY()) {
+             throw new TriangleException("Wrong location of points on Y line");
++        }
+         return true;
+     }
+ 
+     public boolean isRightTriangle(Triangle triangle) throws TriangleException {
+         double ab = 0.0d, bc = 0.0d, ac = 0.0d;
+ 
+-        if (triangle != null || checkPointsInLine(triangle)){
++        if (triangle != null && checkPointsInLine(triangle)){
+             ab = sideCalculation(triangle.getA(), triangle.getB());
+             bc = sideCalculation(triangle.getB(), triangle.getC());
+             ac = sideCalculation(triangle.getA(), triangle.getC());
+Index: src/com/runets/trainingproject/datamanager/impl/FileDataManagerImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.runets.trainingproject.datamanager.impl;\n\nimport com.runets.trainingproject.datamanager.FileDataManager;\nimport org.apache.logging.log4j.LogManager;\nimport org.apache.logging.log4j.Logger;\n\nimport java.io.BufferedReader;\nimport java.io.BufferedWriter;\nimport java.io.FileNotFoundException;\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;\nimport java.nio.file.Paths;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.stream.Collectors;\n\npublic class FileDataManagerImpl implements FileDataManager {\n    private static Logger Logger = LogManager.getLogger(FileDataManagerImpl.class);\n    private static FileDataManagerImpl instance;\n\n    private FileDataManagerImpl(){}\n\n    public static FileDataManagerImpl getInstance(){\n        if (instance == null){\n            instance = new FileDataManagerImpl();\n        }\n        return instance;\n    }\n\n    @Override\n    public List<String> readDataFile(String fileName) {\n        List<String> triangles = new ArrayList<>();\n        try (BufferedReader bufferedReader = Files.newBufferedReader(Paths.get(fileName))){\n            triangles = bufferedReader.lines().collect(Collectors.toList());\n        } catch (FileNotFoundException e) {\n            Logger.fatal(e);\n        } catch (IOException e) {\n            Logger.error(e);\n        }\n        return triangles;\n    }\n\n    @Override\n    public void createDataFile(String fileName) {\n        Path filePath = Paths.get(fileName);\n        if (!Files.exists(filePath)){\n            try {\n                Files.createFile(filePath);\n            } catch (IOException e) {\n                Logger.error(e);\n            }\n        }\n    }\n\n    @Override\n    public boolean writeDataToFile(List<String> data, String fileName) {\n        try (BufferedWriter bufferedReader = Files.newBufferedWriter(Paths.get(fileName))){\n            for (String line : data){\n                bufferedReader.write(line + \"\\n\");\n            }\n        } catch (FileNotFoundException e) {\n            Logger.fatal(e);\n        } catch (IOException e) {\n            Logger.error(e);\n        }\n        return true;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/runets/trainingproject/datamanager/impl/FileDataManagerImpl.java	(date 1510825330000)
++++ src/com/runets/trainingproject/datamanager/impl/FileDataManagerImpl.java	(revision )
+@@ -35,6 +35,7 @@
+             triangles = bufferedReader.lines().collect(Collectors.toList());
+         } catch (FileNotFoundException e) {
+             Logger.fatal(e);
++            throw new RuntimeException(e);
+         } catch (IOException e) {
+             Logger.error(e);
+         }
+@@ -61,6 +62,7 @@
+             }
+         } catch (FileNotFoundException e) {
+             Logger.fatal(e);
++            throw new RuntimeException(e);
+         } catch (IOException e) {
+             Logger.error(e);
+         }
+Index: src/com/runets/trainingproject/entity/Entity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/runets/trainingproject/entity/Entity.java	(revision )
++++ src/com/runets/trainingproject/entity/Entity.java	(revision )
+@@ -0,0 +1,41 @@
++package com.runets.trainingproject.entity;
++
++public abstract class Entity{
++    private int id;
++
++    Entity() {
++    }
++
++    Entity(int id) {
++        this.id = id;
++    }
++
++    public int getId() {
++        return id;
++    }
++    public void setId(int id) {
++        this.id = id;
++    }
++
++    @Override
++    public boolean equals(Object o) {
++        if (this == o) return true;
++        if (o == null || getClass() != o.getClass()) return false;
++
++        Entity entity = (Entity) o;
++
++        return id == entity.id;
++    }
++
++    @Override
++    public int hashCode() {
++        return id;
++    }
++
++    @Override
++    public String toString() {
++        return "Entity{" +
++                "id=" + id +
++                '}';
++    }
++}
+Index: src/com/runets/trainingproject/entity/Triangle.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.runets.trainingproject.entity;\n\nimport org.apache.logging.log4j.LogManager;\nimport org.apache.logging.log4j.Logger;\n\npublic class Triangle {\n    private static Logger Logger = LogManager.getLogger(Triangle.class);\n    private int id;\n    private Point a;\n    private Point b;\n    private Point c;\n\n    public Triangle(int id, Point a, Point b, Point c) {\n        this.id = id;\n        this.a = a;\n        this.b = b;\n        this.c = c;\n    }\n\n    public Triangle(Point a, Point b, Point c) {\n        this.a = a;\n        this.b = b;\n        this.c = c;\n    }\n\n    public Triangle(double xA, double yA, double xB, double yB, double xC, double yC) {\n        a = new Point(xA, yA);\n        b = new Point(xB, yB);\n        c = new Point(xC, yC);\n    }\n\n    public int getId() {\n        return id;\n    }\n    public void setId(int id) {\n        this.id = id;\n    }\n    public Point getA() {\n        return a;\n    }\n    public void setA(Point a) {\n        this.a = a;\n    }\n    public Point getB() {\n        return b;\n    }\n    public void setB(Point b) {\n        this.b = b;\n    }\n    public Point getC() {\n        return c;\n    }\n    public void setC(Point c) {\n        this.c = c;\n    }\n\n    @Override\n    public boolean equals(Object o) {\n        if (this == o) return true;\n        if (o == null || getClass() != o.getClass()) return false;\n\n        Triangle triangle = (Triangle) o;\n\n        if (id != triangle.id) return false;\n        if (a != null ? !a.equals(triangle.a) : triangle.a != null) return false;\n        if (b != null ? !b.equals(triangle.b) : triangle.b != null) return false;\n        return c != null ? c.equals(triangle.c) : triangle.c == null;\n    }\n\n    @Override\n    public int hashCode() {\n        int result = id;\n        result = 31 * result + (a != null ? a.hashCode() : 0);\n        result = 31 * result + (b != null ? b.hashCode() : 0);\n        result = 31 * result + (c != null ? c.hashCode() : 0);\n        return result;\n    }\n\n    @Override\n    public String toString() {\n        return \"Triangle{\" +\n                \"id=\" + id +\n                \", a=\" + a +\n                \", b=\" + b +\n                \", c=\" + c +\n                '}';\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/runets/trainingproject/entity/Triangle.java	(date 1510825330000)
++++ src/com/runets/trainingproject/entity/Triangle.java	(revision )
+@@ -1,17 +1,18 @@
+ package com.runets.trainingproject.entity;
+ 
++import com.runets.trainingproject.observer.impl.TriangleOperation;
+ import org.apache.logging.log4j.LogManager;
+ import org.apache.logging.log4j.Logger;
+ 
+-public class Triangle {
++
++public class Triangle extends Entity{
+     private static Logger Logger = LogManager.getLogger(Triangle.class);
+-    private int id;
+     private Point a;
+     private Point b;
+     private Point c;
+ 
+     public Triangle(int id, Point a, Point b, Point c) {
+-        this.id = id;
++        super(id);
+         this.a = a;
+         this.b = b;
+         this.c = c;
+@@ -29,29 +30,26 @@
+         c = new Point(xC, yC);
+     }
+ 
+-    public int getId() {
+-        return id;
+-    }
+-    public void setId(int id) {
+-        this.id = id;
+-    }
+     public Point getA() {
+         return a;
+     }
+     public void setA(Point a) {
+         this.a = a;
++        TriangleOperation.getInstance().notifyObservers(this);
+     }
+     public Point getB() {
+         return b;
+     }
+     public void setB(Point b) {
+         this.b = b;
++        TriangleOperation.getInstance().notifyObservers(this);
+     }
+     public Point getC() {
+         return c;
+     }
+     public void setC(Point c) {
+         this.c = c;
++        TriangleOperation.getInstance().notifyObservers(this);
+     }
+ 
+     @Override
+@@ -61,7 +59,6 @@
+ 
+         Triangle triangle = (Triangle) o;
+ 
+-        if (id != triangle.id) return false;
+         if (a != null ? !a.equals(triangle.a) : triangle.a != null) return false;
+         if (b != null ? !b.equals(triangle.b) : triangle.b != null) return false;
+         return c != null ? c.equals(triangle.c) : triangle.c == null;
+@@ -69,8 +66,7 @@
+ 
+     @Override
+     public int hashCode() {
+-        int result = id;
+-        result = 31 * result + (a != null ? a.hashCode() : 0);
++        int result = a != null ? a.hashCode() : 0;
+         result = 31 * result + (b != null ? b.hashCode() : 0);
+         result = 31 * result + (c != null ? c.hashCode() : 0);
+         return result;
+@@ -79,8 +75,7 @@
+     @Override
+     public String toString() {
+         return "Triangle{" +
+-                "id=" + id +
+-                ", a=" + a +
++                "a=" + a +
+                 ", b=" + b +
+                 ", c=" + c +
+                 '}';
+Index: src/com/runets/trainingproject/validation/TriangleValidation.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.runets.trainingproject.validation;\n\nimport com.runets.trainingproject.entity.Point;\n\nimport java.util.regex.Matcher;\nimport java.util.regex.Pattern;\n\npublic class TriangleValidation {\n    private final static int COORDINATE_AMOUNT = 6;\n\n    private final static TriangleValidation INSTANCE = new TriangleValidation();\n\n    private TriangleValidation(){}\n\n    public static TriangleValidation getInstance(){\n       return INSTANCE;\n    }\n\n    public boolean checkWithRegex(String number){\n        Pattern p = Pattern.compile(\"-?[\\\\d]+[.]?[\\\\d]+|[\\\\d]+$\");\n        Matcher m = p.matcher(number);\n        return m.matches();\n    }\n\n    public boolean isRightCoordinatesTriangleAmount(int length){\n        return length == COORDINATE_AMOUNT;\n    }\n\n    public boolean isTriangle(Point point1, Point point2, Point point3){\n        double firstSide = Math.hypot((point2.getX() - point1.getX()), (point2.getY() - point1.getY()));\n        double secondSide = Math.hypot((point3.getX() - point2.getX()), (point3.getY() - point2.getY()));\n        double thirdSide = Math.hypot((point3.getX() - point1.getX()), (point3.getY() - point1.getY()));\n\n        return firstSide + secondSide > thirdSide && secondSide + thirdSide > firstSide && thirdSide + firstSide > secondSide;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/runets/trainingproject/validation/TriangleValidation.java	(date 1510825330000)
++++ src/com/runets/trainingproject/validation/TriangleValidation.java	(revision )
+@@ -7,7 +7,7 @@
+ 
+ public class TriangleValidation {
+     private final static int COORDINATE_AMOUNT = 6;
+-
++    private final static String COORDINATE_PATTERN = "-?[\\d]+[.]?[\\d]+|[\\d]+$";
+     private final static TriangleValidation INSTANCE = new TriangleValidation();
+ 
+     private TriangleValidation(){}
+@@ -17,7 +17,7 @@
+     }
+ 
+     public boolean checkWithRegex(String number){
+-        Pattern p = Pattern.compile("-?[\\d]+[.]?[\\d]+|[\\d]+$");
++        Pattern p = Pattern.compile(COORDINATE_PATTERN);
+         Matcher m = p.matcher(number);
+         return m.matches();
+     }
+Index: src/com/runets/trainingproject/entity/Point.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.runets.trainingproject.entity;\n\nimport org.apache.logging.log4j.LogManager;\nimport org.apache.logging.log4j.Logger;\n\npublic class Point {\n    private static Logger Logger = LogManager.getLogger(Point.class);\n    private double x;\n    private double y;\n\n    public Point(double x, double y) {\n        this.x = x;\n        this.y = y;\n    }\n\n    public double getX() {\n        return x;\n    }\n    public void setX(double x) {\n        this.x = x;\n    }\n    public double getY() {\n        return y;\n    }\n    public void setY(double y) {\n        this.y = y;\n    }\n\n    @Override\n    public boolean equals(Object o) {\n        if (this == o) return true;\n        if (o == null || getClass() != o.getClass()) return false;\n\n        Point point = (Point) o;\n\n        if (Double.compare(point.x, x) != 0) return false;\n        return Double.compare(point.y, y) == 0;\n    }\n\n    @Override\n    public int hashCode() {\n       return (int) (31 * x + y);\n    }\n\n    @Override\n    public String toString() {\n        return \"Point{\" +\n                \"x=\" + x +\n                \", y=\" + y +\n                '}';\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/runets/trainingproject/entity/Point.java	(date 1510825330000)
++++ src/com/runets/trainingproject/entity/Point.java	(revision )
+@@ -3,7 +3,7 @@
+ import org.apache.logging.log4j.LogManager;
+ import org.apache.logging.log4j.Logger;
+ 
+-public class Point {
++public class Point{
+     private static Logger Logger = LogManager.getLogger(Point.class);
+     private double x;
+     private double y;
+Index: src/test/com/runets/trainingproject/observer/TestObserver.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/com/runets/trainingproject/observer/TestObserver.java	(revision )
++++ src/test/com/runets/trainingproject/observer/TestObserver.java	(revision )
+@@ -0,0 +1,73 @@
++package test.com.runets.trainingproject.observer;
++
++import com.runets.trainingproject.action.TriangleAction;
++import com.runets.trainingproject.creator.AbstractCreator;
++import com.runets.trainingproject.creator.TriangleCreator;
++import com.runets.trainingproject.datamanager.impl.FileDataManagerImpl;
++import com.runets.trainingproject.entity.Point;
++import com.runets.trainingproject.entity.Triangle;
++import com.runets.trainingproject.exception.TriangleException;
++import com.runets.trainingproject.observer.impl.TriangleOperation;
++import com.runets.trainingproject.observer.impl.TriangleOperationObserver;
++import org.testng.Assert;
++import org.testng.annotations.BeforeTest;
++import org.testng.annotations.Test;
++
++import java.util.*;
++
++public class TestObserver {
++    private List<Triangle> list;
++    private Map<Integer, TriangleOperationObserver> map = new HashMap<>();
++    private final static String FILE_NAME = "file/TestObserver.txt";
++
++    @BeforeTest
++    public void setUp() throws TriangleException {
++        List<String> dataList = new ArrayList<>();
++        AbstractCreator creator = new TriangleCreator();
++
++        dataList.add("6.0 1.0 2.0 5.0 5.0 3.0");
++        dataList.add("4.0 5.0 6.0 5.0 5.0 7.0");
++        dataList.add("2.4 1.5 2.6 5.7 5.0 6.0");
++
++        FileDataManagerImpl.getInstance().createDataFile(FILE_NAME);
++        FileDataManagerImpl.getInstance().writeDataToFile(dataList, FILE_NAME);
++
++        list = creator.createTriangleList(FILE_NAME);
++
++        for (Triangle triangle : list){
++            map.put(triangle.getId(), new TriangleOperationObserver(triangle));
++            TriangleOperation.getInstance().addObserver(map.get(triangle.getId()));
++        }
++    }
++
++
++    @Test
++    public void beforeChangedValueTestSquare() throws TriangleException {
++        for (Triangle triangle : list){
++            Assert.assertEquals(TriangleAction.getInstance().square(triangle), map.get(triangle.getId()).getSquare());
++        }
++    }
++
++    @Test
++    public void beforeChangedValueTestPerimeter() throws TriangleException {
++        for (Triangle triangle : list){
++            Assert.assertEquals(TriangleAction.getInstance().perimeter(triangle), map.get(triangle.getId()).getPerimeter());
++        }
++    }
++
++    @Test
++    public void afterChangedValueTestSquare() throws TriangleException {
++        for (Triangle triangle : list){
++            triangle.setB(new Point(1.0, 2.0));
++            Assert.assertEquals(TriangleAction.getInstance().square(triangle), map.get(triangle.getId()).getSquare());
++        }
++    }
++
++    @Test
++    public void afterChangedValueTestPerimeter() throws TriangleException {
++        for (Triangle triangle : list){
++            triangle.setC(new Point(1.0, 2.0));
++            Assert.assertEquals(TriangleAction.getInstance().perimeter(triangle), map.get(triangle.getId()).getPerimeter());
++        }
++    }
++}
+Index: log/logs.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:40:57 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:41:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:42:37 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:42:38 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:43:36 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:44:06 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:44:06 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:44:06 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:44:06 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:44:06 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n23:56:49 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n23:56:49 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n23:56:49 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n23:56:49 INFO  [main] action.TriangleAction - The result of perimetr is: 5.01.70000000000000023.7802116342871597\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n00:10:13 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n00:10:13 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n00:10:13 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n00:10:13 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n09:45:52 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n09:45:52 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:45:52 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n09:45:52 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n09:48:34 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n09:48:34 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n09:48:34 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n09:48:34 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:21:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:21:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:21:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:23:24 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:23:24 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:23:24 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n12:25:07 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates\n12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n12:25:07 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 5\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 7.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:07 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:25:07 DEBUG [main] validation.ValidationFile - The size of list triangles: 6\n12:25:07 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:25:07 INFO  [main] action.TriangleAction - The result of square is: 2.5500000000000003\n12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:25:46 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:25:46 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n12:25:46 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:26:51 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n12:26:51 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:26:51 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n12:26:51 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates\n12:26:51 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0\n\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:26:51 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:26:51 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n12:26:51 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:26:51 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:26:51 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:26:51 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:34:27 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n12:34:27 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:34:27 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n12:34:27 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates:\n12:34:27 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0\n\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:34:27 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:34:27 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n12:34:27 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:34:27 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:34:27 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:34:27 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:35:05 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n12:35:05 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:35:05 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n12:35:05 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates:\n12:35:05 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0\n\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:35:05 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:35:05 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n12:35:05 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:35:05 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:35:05 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:35:05 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:35:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 1\n12:35:42 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:35:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n12:35:42 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates:\n12:35:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 3\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 2.0\n\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 1.0\n\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 6.0\n\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 5.0\n\n12:35:42 DEBUG [main] validation.ValidationFile - The value of coordinate: 3.3\n\n12:35:42 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n12:35:42 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:35:42 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:35:42 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:35:42 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n12:36:35 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:36:35 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates:\n12:36:35 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n12:36:35 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:36:35 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:36:35 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:36:35 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n12:37:23 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:37:23 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1\n12:37:23 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n12:37:23 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:37:23 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:37:23 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:37:23 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n12:40:52 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:40:52 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1\n12:40:52 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n12:40:52 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:40:52 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n12:42:11 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:42:11 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1\n12:42:11 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n12:42:11 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:42:11 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:42:11 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:42:11 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n12:43:19 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:43:19 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1\n12:43:19 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n12:43:19 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:43:19 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:43:19 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:43:19 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n12:45:08 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:45:08 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1\n12:45:08 DEBUG [main] validation.ValidationFile - The size of list triangles: 4\n12:45:08 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:45:08 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:45:08 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:45:08 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n12:59:24 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n12:59:24 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1\n12:59:24 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n12:59:24 INFO  [main] action.TriangleAction - The result of square is: 6.0\n12:59:24 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n13:03:17 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n13:03:17 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1\n13:03:17 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n13:03:17 INFO  [main] action.TriangleAction - The result of square is: 6.0\n13:03:17 INFO  [main] action.TriangleAction - The result of square is: 1.4000000000000004\n21:54:55 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n21:54:55 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1\n21:54:55 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n21:54:55 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n21:55:25 ERROR [main] validation.ValidationFile - ValidationException: The value of coordinate is wrong, value: 2z.0\n21:55:25 ERROR [main] validation.ValidationFile - ValidationException: Wrong amount of coordinates: 1\n21:55:25 DEBUG [main] validation.ValidationFile - The size of list triangles: 2\n21:55:25 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n21:55:25 INFO  [main] action.TriangleAction - The result of perimetr is: 5.6568542494923811.97230829233160223.7802116342871597\n23:08:12 ERROR [main] reader.TriangleDataReader - java.io.FileNotFoundException: file.test (Не удается найти указанный файл)\n23:08:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n23:08:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle\n23:12:38 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n23:12:38 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n23:13:29 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n23:46:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n23:46:32 INFO  [main] action.TriangleAction - The result of square is: 6.0\n23:46:32 INFO  [main] action.TriangleAction - The result of square is: 2.0\n23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n23:47:11 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle: \n23:47:11 INFO  [main] action.TriangleAction - The result of square is: 6.0\n23:47:11 INFO  [main] action.TriangleAction - The result of square is: 2.0\n23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n23:59:32 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.\n23:59:32 INFO  [main] action.TriangleAction - The result of square is: 6.0\n23:59:32 INFO  [main] action.TriangleAction - The result of square is: 2.0\n00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n00:11:03 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.\n00:11:03 INFO  [main] action.TriangleAction - The result of square is: 6.0\n00:11:03 INFO  [main] action.TriangleAction - The result of square is: 2.0\n00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n00:13:17 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.\n00:13:17 INFO  [main] action.TriangleAction - The result of square is: 6.0\n00:13:17 INFO  [main] action.TriangleAction - The result of square is: 2.0\n00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n00:19:57 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.\n00:19:57 INFO  [main] action.TriangleAction - The result of square is: 6.0\n00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n00:20:19 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.\n00:20:19 INFO  [main] action.TriangleAction - The result of square is: 6.0\n00:20:19 INFO  [main] action.TriangleAction - The result of square is: 2.0\n00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n00:21:23 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.\n00:21:23 INFO  [main] action.TriangleAction - The result of square is: 6.0\n00:21:23 INFO  [main] action.TriangleAction - The result of square is: 7.0\n15:39:27 ERROR [main] reader.TriangleDataReader - java.io.FileNotFoundException: file\\java.txt (Не удается найти указанный файл)\n15:39:27 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n15:40:01 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.\n15:40:01 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:40:26 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:40:40 INFO  [main] action.TriangleAction - The result of square is: 4.725\n15:41:16 INFO  [main] action.TriangleAction - The result of square is: 4.555\n16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:18 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:50 INFO  [main] action.TriangleAction - The result of square is: 5.404999999999999\n16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:01:50 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:03:09 INFO  [main] action.TriangleAction - The result of square is: 5.404999999999999\n16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:03:09 INFO  [main] action.TriangleAction - The result of square is: 6.0\n16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:03:16 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n16:59:58 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:00:13 INFO  [main] action.TriangleAction - The result of perimetr is: 4.03.4481879299133343.7802116342871597\n17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:05:25 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of coordinate: 2z.0\n17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 1\n17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 2\n17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 4\n17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 5\n17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: There is a wrong amount of coordinates in file: 7\n17:56:33 ERROR [main] creator.AbstractCreator - com.runets.trainingproject.exception.ValidationException: The wrong value of points, to create a triangle.\n17:56:33 INFO  [main] creator.AbstractCreator - The lenght of triangles is a 2\n15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:43:59 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:22:40 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:26:02 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:26:02 INFO  [main] action.TriangleAction - The result of square is: 25.5\n15:27:58 INFO  [main] action.TriangleAction - The result of square is: 6.0\n15:27:58 INFO  [main] action.TriangleAction - The result of square is: 25.5\n15:27:58 INFO  [main] action.TriangleAction - The result of square is: -25.5\n15:30:40 INFO  [main] action.TriangleAction - The result of square is: -6.0\n15:30:40 INFO  [main] action.TriangleAction - The result of square is: -25.5\n15:30:40 INFO  [main] action.TriangleAction - The result of square is: 25.5\n11:38:56 INFO  [main] action.TriangleAction - The result of square is: -6.0\n11:38:56 INFO  [main] action.TriangleAction - The result of square is: -25.5\n11:38:56 INFO  [main] action.TriangleAction - The result of square is: 25.5\n11:39:04 INFO  [main] action.TriangleAction - The result of perimeter is: 4.03.4481879299133343.7802116342871597\n11:39:04 INFO  [main] action.TriangleAction - The result of perimeter is: 4.03.4481879299133343.7802116342871597\n11:40:31 ERROR [main] parser.TriangleParser - java.text.ParseException: Unparseable number: \"sdf\"\n11:41:06 ERROR [main] parser.TriangleParser - java.text.ParseException: Unparseable number: \"asd\"\n17:25:08 INFO  [main] action.TriangleAction - The result of square is: 6.0\n17:25:08 INFO  [main] action.TriangleAction - The result of square is: 25.5\n17:25:08 INFO  [main] action.TriangleAction - The result of square is: 25.5\n17:25:08 INFO  [main] action.TriangleAction - The result of square is: 25.5\n17:25:42 INFO  [main] action.TriangleAction - The result of perimeter is: 4.03.4481879299133343.7802116342871597\n17:25:42 INFO  [main] action.TriangleAction - The result of perimeter is: 4.03.4481879299133343.7802116342871597\n22:33:57 INFO  [main] action.TriangleAction - The result of square is: 6.0\n22:33:57 INFO  [main] action.TriangleAction - The result of square is: 25.5\n22:33:57 INFO  [main] action.TriangleAction - The result of square is: 25.5\n22:33:57 INFO  [main] action.TriangleAction - The result of square is: 25.5\n22:34:23 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176613.4481879299133344.6141087980237305\n22:34:23 INFO  [main] action.TriangleAction - The result of perimeter is: 6.3253458403473883.28024389337134543.047950130825634\n22:34:54 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176613.4481879299133344.6141087980237305\n22:34:54 INFO  [main] action.TriangleAction - The result of perimeter is: 6.3253458403473883.28024389337134543.047950130825634\n22:36:03 ERROR [main] parser.TriangleParser - java.text.ParseException: Unparseable number: \"asd\"\n22:36:33 ERROR [main] parser.TriangleParser - java.text.ParseException: Unparseable number: \"asd\"\n22:36:52 ERROR [main] parser.TriangleParser - java.text.ParseException: Unparseable number: \"asd\"\n20:51:11 INFO  [main] action.TriangleAction - The result of square is: 6.0\n20:51:11 INFO  [main] action.TriangleAction - The result of square is: 25.5\n20:51:11 INFO  [main] action.TriangleAction - The result of square is: 25.5\n20:51:11 INFO  [main] action.TriangleAction - The result of square is: 25.5\n21:01:11 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:03:37 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:08:08 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:09:05 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:09:36 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:10:18 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:10:44 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:11:22 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:12:41 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:13:17 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:14:01 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:14:37 INFO  [main] creator.AbstractCreator - The length of triangles is a 1\n21:17:26 INFO  [main] creator.AbstractCreator - The length of triangles is a 1\n21:18:10 INFO  [main] creator.AbstractCreator - The length of triangles is a 1\n21:19:51 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:21:11 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:21:19 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n21:22:55 INFO  [main] creator.AbstractCreator - The length of triangles is a 3\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- log/logs.txt	(date 1510825330000)
++++ log/logs.txt	(revision )
+@@ -1030,3 +1030,654 @@
+ 21:21:11 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+ 21:21:19 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
+ 21:22:55 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++19:33:30 INFO  [main] action.TriangleAction - The result of square is: 3.0
++19:34:19 INFO  [main] action.TriangleAction - The result of square is: 3.0
++19:34:19 INFO  [main] action.TriangleAction - The result of square is: 2.0
++19:34:19 INFO  [main] action.TriangleAction - The result of square is: 5.01
++19:34:19 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:45:12 INFO  [main] action.TriangleAction - The result of square is: 3.0
++19:45:12 INFO  [main] action.TriangleAction - The result of square is: 2.0
++19:45:12 INFO  [main] action.TriangleAction - The result of square is: 5.01
++19:45:12 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:45:38 INFO  [main] action.TriangleAction - The result of square is: 3.0
++19:45:38 INFO  [main] action.TriangleAction - The result of square is: 2.0
++19:45:38 INFO  [main] action.TriangleAction - The result of square is: 5.01
++19:45:38 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:45:38 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:45:38 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:49:12 INFO  [main] action.TriangleAction - The result of square is: 3.0
++19:49:12 INFO  [main] action.TriangleAction - The result of square is: 2.0
++19:49:12 INFO  [main] action.TriangleAction - The result of square is: 5.01
++19:49:12 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++19:49:12 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++19:49:12 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++19:49:12 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:49:12 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:49:12 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:57:59 INFO  [main] action.TriangleAction - The result of square is: 3.0
++19:57:59 INFO  [main] action.TriangleAction - The result of square is: 2.0
++19:57:59 INFO  [main] action.TriangleAction - The result of square is: 5.01
++19:57:59 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++19:57:59 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:57:59 INFO  [main] action.TriangleAction - The result of square is: 2.0
++19:57:59 INFO  [main] action.TriangleAction - The result of square is: 5.01
++19:59:26 INFO  [main] action.TriangleAction - The result of square is: 3.0
++19:59:26 INFO  [main] action.TriangleAction - The result of square is: 2.0
++19:59:26 INFO  [main] action.TriangleAction - The result of square is: 5.01
++19:59:26 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++19:59:26 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:59:26 INFO  [main] action.TriangleAction - The result of square is: 2.0
++19:59:26 INFO  [main] action.TriangleAction - The result of square is: 5.01
++19:59:42 INFO  [main] action.TriangleAction - The result of square is: 3.0
++19:59:42 INFO  [main] action.TriangleAction - The result of square is: 2.0
++19:59:42 INFO  [main] action.TriangleAction - The result of square is: 5.01
++19:59:42 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++19:59:42 INFO  [main] impl.TriangleObserverImpl - Triangle{id=1, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++19:59:42 INFO  [main] impl.TriangleObserverImpl - Triangle{id=2, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++19:59:42 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:59:42 INFO  [main] action.TriangleAction - The result of square is: 8.0
++19:59:42 INFO  [main] action.TriangleAction - The result of square is: 8.0
++20:14:47 INFO  [main] action.TriangleAction - The result of square is: 3.0
++20:14:47 INFO  [main] action.TriangleAction - The result of square is: 2.0
++20:14:47 INFO  [main] action.TriangleAction - The result of square is: 5.01
++20:14:47 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++20:14:47 INFO  [main] action.TriangleAction - The result of square is: 8.0
++20:14:47 INFO  [main] action.TriangleAction - The result of square is: 2.0
++20:14:47 INFO  [main] action.TriangleAction - The result of square is: 5.01
++20:29:08 INFO  [main] action.TriangleAction - The result of square is: 3.0
++20:29:08 INFO  [main] action.TriangleAction - The result of square is: 2.0
++20:29:08 INFO  [main] action.TriangleAction - The result of square is: 5.01
++20:29:08 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++20:29:08 INFO  [main] action.TriangleAction - The result of square is: 8.0
++20:29:08 INFO  [main] action.TriangleAction - The result of square is: 2.0
++20:29:08 INFO  [main] action.TriangleAction - The result of square is: 5.01
++20:30:44 INFO  [main] action.TriangleAction - The result of square is: 3.0
++20:30:44 INFO  [main] action.TriangleAction - The result of square is: 2.0
++20:30:44 INFO  [main] action.TriangleAction - The result of square is: 5.01
++20:30:44 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++20:30:44 INFO  [main] action.TriangleAction - The result of square is: 8.0
++20:30:44 INFO  [main] action.TriangleAction - The result of square is: 2.0
++20:30:44 INFO  [main] action.TriangleAction - The result of square is: 5.01
++20:31:37 INFO  [main] action.TriangleAction - The result of square is: 3.0
++20:31:37 INFO  [main] action.TriangleAction - The result of square is: 2.0
++20:31:37 INFO  [main] action.TriangleAction - The result of square is: 5.01
++20:31:37 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++20:31:37 INFO  [main] impl.TriangleObserverImpl - Triangle{id=1, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++20:31:37 INFO  [main] impl.TriangleObserverImpl - Triangle{id=2, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++20:31:37 INFO  [main] action.TriangleAction - The result of square is: 8.0
++20:31:37 INFO  [main] action.TriangleAction - The result of square is: 8.0
++20:31:37 INFO  [main] action.TriangleAction - The result of square is: 8.0
++20:32:08 INFO  [main] action.TriangleAction - The result of square is: 3.0
++20:32:08 INFO  [main] action.TriangleAction - The result of square is: 2.0
++20:32:08 INFO  [main] action.TriangleAction - The result of square is: 5.01
++20:32:08 INFO  [main] impl.TriangleObserverImpl - Triangle{id=0, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++20:32:08 INFO  [main] impl.TriangleObserverImpl - Triangle{id=1, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++20:32:08 INFO  [main] impl.TriangleObserverImpl - Triangle{id=2, a=Point{x=1.0, y=1.0}, b=Point{x=2.0, y=5.0}, c=Point{x=5.0, y=1.0}}
++20:32:08 INFO  [main] action.TriangleAction - The result of square is: 8.0
++20:32:08 INFO  [main] action.TriangleAction - The result of square is: 8.0
++20:32:08 INFO  [main] action.TriangleAction - The result of square is: 8.0
++21:05:27 INFO  [main] action.TriangleAction - The result of square is: 8.0
++21:05:27 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++21:06:58 INFO  [main] action.TriangleAction - The result of square is: 8.0
++21:06:58 INFO  [main] action.TriangleAction - The result of square is: 8.0
++21:06:58 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++21:16:46 INFO  [main] action.TriangleAction - The result of square is: 8.0
++21:16:46 INFO  [main] action.TriangleAction - The result of square is: 8.0
++21:16:46 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++21:17:18 INFO  [main] action.TriangleAction - The result of square is: 8.0
++21:17:18 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++21:17:52 INFO  [main] action.TriangleAction - The result of square is: 8.0
++21:17:52 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++21:19:01 INFO  [main] action.TriangleAction - The result of square is: 8.0
++21:19:01 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:17:37 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:17:37 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:18:14 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:18:14 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176615.04.0
++23:18:14 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:18:14 INFO  [main] action.TriangleAction - The result of perimeter is: 2.85.03.2310988842807027
++23:20:01 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:20:01 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176615.04.0
++23:20:01 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:20:01 INFO  [main] action.TriangleAction - The result of perimeter is: 2.85.03.2310988842807027
++23:21:37 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:21:37 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176615.04.0
++23:21:37 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:21:37 INFO  [main] action.TriangleAction - The result of perimeter is: 2.85.03.2310988842807027
++23:23:28 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:23:28 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176615.04.0
++23:24:02 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:24:02 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176615.04.0
++23:24:02 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:24:02 INFO  [main] action.TriangleAction - The result of perimeter is: 2.85.03.2310988842807027
++23:24:23 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:24:23 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176615.04.0
++23:24:23 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:24:23 INFO  [main] action.TriangleAction - The result of perimeter is: 2.85.03.2310988842807027
++23:25:10 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:25:10 INFO  [main] action.TriangleAction - The result of perimeter is: 4.1231056256176615.04.0
++23:25:10 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:25:10 INFO  [main] action.TriangleAction - The result of perimeter is: 2.85.03.2310988842807027
++23:30:10 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:30:10 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:30:10 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:30:10 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:30:48 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:30:48 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:30:48 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:30:48 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:31:20 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:31:20 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:31:20 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:31:20 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:34:27 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:34:27 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:34:27 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:34:27 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:37:04 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:37:53 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:40:16 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:40:16 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:40:45 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:40:45 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:41:39 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:41:39 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:41:39 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:41:39 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:42:33 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:42:33 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:42:33 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:42:33 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:43:18 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:43:18 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:43:18 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:43:18 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:43:18 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:43:18 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:43:18 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:43:18 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:46:31 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:46:31 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:46:31 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:46:31 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:46:51 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:46:51 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:46:51 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:46:51 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:50:28 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:50:28 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:50:28 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:50:28 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:50:51 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:50:51 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:50:51 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:50:51 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:51:12 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:51:12 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:51:12 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:51:12 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++23:52:20 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:52:20 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:52:20 INFO  [main] action.TriangleAction - The result of square is: 8.0
++23:52:20 INFO  [main] action.TriangleAction - The result of perimeter is: 13.123105625617661
++23:52:20 INFO  [main] action.TriangleAction - The result of square is: 4.199999999999999
++23:52:20 INFO  [main] action.TriangleAction - The result of perimeter is: 11.031098884280702
++11:19:21 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:50:16 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:50:45 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:50:45 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:52:24 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:52:24 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:52:24 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:52:24 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:52:24 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++11:52:24 INFO  [main] action.TriangleAction - The result of square is: 5.01
++11:52:24 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++11:52:24 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:53:03 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:53:03 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:53:03 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:53:03 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:53:03 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++11:53:03 INFO  [main] action.TriangleAction - The result of square is: 5.01
++11:53:03 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++11:53:03 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:54:56 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:54:56 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:54:56 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:54:56 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:54:56 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++11:54:56 INFO  [main] action.TriangleAction - The result of square is: 5.01
++11:54:56 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++11:54:56 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:55:11 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:55:11 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:55:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:55:11 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:55:11 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++11:55:11 INFO  [main] action.TriangleAction - The result of square is: 5.01
++11:55:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++11:55:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:55:59 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:55:59 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:55:59 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:55:59 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:55:59 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++11:55:59 INFO  [main] action.TriangleAction - The result of square is: 5.01
++11:55:59 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++11:55:59 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:56:50 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:56:50 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:56:50 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:56:50 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:56:50 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++11:56:50 INFO  [main] action.TriangleAction - The result of square is: 5.01
++11:56:50 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++11:56:50 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:57:59 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:57:59 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:57:59 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:57:59 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:57:59 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++11:57:59 INFO  [main] action.TriangleAction - The result of square is: 5.01
++11:57:59 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++11:57:59 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:59:11 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++11:59:11 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:59:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:59:11 INFO  [main] action.TriangleAction - The result of square is: 2.0
++11:59:11 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++11:59:11 INFO  [main] action.TriangleAction - The result of square is: 5.01
++11:59:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++11:59:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++11:59:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:01:10 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:01:10 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:01:10 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:01:10 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:01:10 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:01:10 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:01:10 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:01:10 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:01:10 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:01:53 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:01:53 INFO  [main] creator.TriangleCreator - Triangle id is 8
++12:01:53 INFO  [main] creator.TriangleCreator - Triangle id is 6
++12:01:53 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:01:53 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:01:53 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:01:53 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:01:53 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:01:53 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:01:53 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:01:53 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:01:53 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:01:53 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:02:07 INFO  [main] creator.TriangleCreator - Triangle id is 8
++12:02:07 INFO  [main] creator.TriangleCreator - Triangle id is 7
++12:02:07 INFO  [main] creator.TriangleCreator - Triangle id is 3
++12:02:07 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:02:07 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:02:07 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:02:07 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:02:07 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:02:07 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:02:07 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:02:07 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:02:07 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:02:07 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:03:18 INFO  [main] creator.TriangleCreator - Triangle id is 6
++12:03:18 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:03:18 INFO  [main] creator.TriangleCreator - Triangle id is 6
++12:03:18 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:03:18 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:03:18 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:03:18 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:03:18 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:03:18 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:03:18 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:03:18 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:03:37 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:03:37 INFO  [main] creator.TriangleCreator - Triangle id is 0
++12:03:37 INFO  [main] creator.TriangleCreator - Triangle id is 5
++12:03:37 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:03:37 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:03:37 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:03:37 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:03:37 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:03:37 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:03:37 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:03:37 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:03:37 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:03:37 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:11:31 INFO  [main] creator.TriangleCreator - Triangle id is 2
++12:11:31 INFO  [main] creator.TriangleCreator - Triangle id is 6
++12:11:31 INFO  [main] creator.TriangleCreator - Triangle id is 2
++12:11:31 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:11:31 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:11:31 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:11:31 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:11:31 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:11:31 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:11:31 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:12:17 INFO  [main] creator.TriangleCreator - Triangle id is 5
++12:12:17 INFO  [main] creator.TriangleCreator - Triangle id is 5
++12:12:17 INFO  [main] creator.TriangleCreator - Triangle id is 7
++12:12:17 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:12:17 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:12:17 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:12:17 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:12:17 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:12:17 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:12:17 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:12:17 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:12:41 INFO  [main] creator.TriangleCreator - Triangle id is 0
++12:12:41 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:12:41 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:12:41 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:12:41 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:12:41 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:12:41 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:12:41 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:12:41 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:12:41 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:12:41 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:13:43 INFO  [main] creator.TriangleCreator - Triangle id is 4
++12:13:43 INFO  [main] creator.TriangleCreator - Triangle id is 6
++12:13:43 INFO  [main] creator.TriangleCreator - Triangle id is 5
++12:13:43 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:13:43 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:13:43 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:13:53 INFO  [main] creator.TriangleCreator - Triangle id is 7
++12:13:53 INFO  [main] creator.TriangleCreator - Triangle id is 5
++12:13:53 INFO  [main] creator.TriangleCreator - Triangle id is 2
++12:13:53 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:13:53 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:13:53 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:14:25 INFO  [main] creator.TriangleCreator - Triangle id is 6
++12:14:25 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:14:25 INFO  [main] creator.TriangleCreator - Triangle id is 1
++12:14:25 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:14:25 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:14:25 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:32:01 INFO  [main] creator.TriangleCreator - Triangle id is 7
++12:32:01 INFO  [main] creator.TriangleCreator - Triangle id is 5
++12:32:01 INFO  [main] creator.TriangleCreator - Triangle id is 6
++12:32:01 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:32:01 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:32:01 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:32:01 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:32:01 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:32:01 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:32:01 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:32:01 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:32:01 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:32:01 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:32:01 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:32:05 INFO  [main] creator.TriangleCreator - Triangle id is 5
++12:32:05 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:32:05 INFO  [main] creator.TriangleCreator - Triangle id is 1
++12:32:05 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:32:05 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:34:20 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:34:20 INFO  [main] creator.TriangleCreator - Triangle id is 0
++12:34:20 INFO  [main] creator.TriangleCreator - Triangle id is 8
++12:34:20 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:34:20 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:34:20 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:34:20 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:34:20 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:34:20 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:34:20 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:34:20 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:34:20 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:34:20 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:34:34 INFO  [main] creator.TriangleCreator - Triangle id is 4
++12:34:34 INFO  [main] creator.TriangleCreator - Triangle id is 4
++12:34:34 INFO  [main] creator.TriangleCreator - Triangle id is 2
++12:34:34 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:34:34 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:34:34 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:34:34 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:34:34 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:34:34 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:34:34 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:34:34 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:34:34 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:34:34 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:37:01 INFO  [main] creator.TriangleCreator - Triangle id is 1
++12:37:01 INFO  [main] creator.TriangleCreator - Triangle id is 3
++12:37:01 INFO  [main] creator.TriangleCreator - Triangle id is 5
++12:37:01 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:37:01 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:37:01 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:37:01 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:37:01 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:37:01 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:37:01 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:37:02 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:37:02 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:37:02 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:37:06 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:37:06 INFO  [main] creator.TriangleCreator - Triangle id is 1
++12:37:06 INFO  [main] creator.TriangleCreator - Triangle id is 3
++12:37:06 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:37:06 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:37:06 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:37:06 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:37:06 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:37:06 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:37:06 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:37:06 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:37:06 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:37:06 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:37:12 INFO  [main] creator.TriangleCreator - Triangle id is 1
++12:37:12 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:37:12 INFO  [main] creator.TriangleCreator - Triangle id is 6
++12:37:12 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:37:12 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:37:12 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:37:19 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:37:19 INFO  [main] creator.TriangleCreator - Triangle id is 5
++12:37:19 INFO  [main] creator.TriangleCreator - Triangle id is 6
++12:37:19 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 5.5
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 10.89093456125003
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 6.5
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 14.470144109777939
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:37:19 INFO  [main] action.TriangleAction - The result of square is: 4.2
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:37:19 INFO  [main] action.TriangleAction - The result of perimeter is: 12.106660448131219
++12:40:04 INFO  [main] creator.TriangleCreator - Triangle id is 4
++12:40:04 INFO  [main] creator.TriangleCreator - Triangle id is 3
++12:40:04 INFO  [main] creator.TriangleCreator - Triangle id is 4
++12:40:04 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:40:04 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:40:04 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:40:04 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:40:04 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:40:04 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:40:04 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:40:05 INFO  [main] action.TriangleAction - The result of square is: 8.0
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 13.918151423253544
++12:40:05 INFO  [main] action.TriangleAction - The result of square is: 8.0
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 13.918151423253544
++12:40:05 INFO  [main] action.TriangleAction - The result of square is: 8.0
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 13.918151423253544
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 13.918151423253544
++12:40:05 INFO  [main] action.TriangleAction - The result of square is: 3.0
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 12.073592581964586
++12:40:05 INFO  [main] action.TriangleAction - The result of square is: 3.0
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 12.073592581964586
++12:40:05 INFO  [main] action.TriangleAction - The result of square is: 3.0
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 12.073592581964586
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 12.073592581964586
++12:40:05 INFO  [main] action.TriangleAction - The result of square is: 2.9899999999999998
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 9.722494957206855
++12:40:05 INFO  [main] action.TriangleAction - The result of square is: 2.9899999999999998
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 9.722494957206855
++12:40:05 INFO  [main] action.TriangleAction - The result of square is: 2.9899999999999998
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 9.722494957206855
++12:40:05 INFO  [main] action.TriangleAction - The result of perimeter is: 9.722494957206855
++12:40:11 INFO  [main] creator.TriangleCreator - Triangle id is 5
++12:40:11 INFO  [main] creator.TriangleCreator - Triangle id is 6
++12:40:11 INFO  [main] creator.TriangleCreator - Triangle id is 9
++12:40:11 INFO  [main] creator.AbstractCreator - The length of triangles is a 3
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.498473502456159
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 2.0
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 6.47213595499958
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 5.01
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.820551116889806
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 4.5
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.458193116710234
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 4.5
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.458193116710234
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 4.5
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 11.458193116710234
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 4.5
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 1.5
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 12.881832902051922
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 1.5
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 12.881832902051922
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 1.5
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 12.881832902051922
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 1.5
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 3.8
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 12.340575708298744
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 3.8
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 12.340575708298744
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 3.8
++12:40:11 INFO  [main] action.TriangleAction - The result of perimeter is: 12.340575708298744
++12:40:11 INFO  [main] action.TriangleAction - The result of square is: 3.8
+Index: src/com/runets/trainingproject/creator/TriangleCreator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.runets.trainingproject.creator;\n\nimport com.runets.trainingproject.entity.Point;\nimport com.runets.trainingproject.entity.Triangle;\nimport com.runets.trainingproject.exception.ValidationException;\nimport com.runets.trainingproject.validation.TriangleValidation;\nimport org.apache.logging.log4j.LogManager;\nimport org.apache.logging.log4j.Logger;\n\npublic class TriangleCreator extends AbstractCreator {\n    private static Logger Logger = LogManager.getLogger(TriangleCreator.class);\n\n    public Triangle createTriangle(double[] coordinates) throws ValidationException {\n        Point point1 = new Point(coordinates[0], coordinates[1]);\n        Point point2 = new Point(coordinates[2], coordinates[3]);\n        Point point3 = new Point(coordinates[4], coordinates[5]);\n\n        if (!TriangleValidation.getInstance().isTriangle(point1, point2, point3)) {\n            throw new ValidationException(\"The wrong values  of points, to create a triangle.\");\n        }\n\n        return new Triangle(point1, point2, point3);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/runets/trainingproject/creator/TriangleCreator.java	(date 1510825330000)
++++ src/com/runets/trainingproject/creator/TriangleCreator.java	(revision )
+@@ -11,6 +11,7 @@
+     private static Logger Logger = LogManager.getLogger(TriangleCreator.class);
+ 
+     public Triangle createTriangle(double[] coordinates) throws ValidationException {
++        int id = (int) (Math.random() * 10);
+         Point point1 = new Point(coordinates[0], coordinates[1]);
+         Point point2 = new Point(coordinates[2], coordinates[3]);
+         Point point3 = new Point(coordinates[4], coordinates[5]);
+@@ -18,7 +19,7 @@
+         if (!TriangleValidation.getInstance().isTriangle(point1, point2, point3)) {
+             throw new ValidationException("The wrong values  of points, to create a triangle.");
+         }
+-
+-        return new Triangle(point1, point2, point3);
++        Logger.info("Triangle id is " + id);
++        return new Triangle(id, point1, point2, point3);
+     }
+ }

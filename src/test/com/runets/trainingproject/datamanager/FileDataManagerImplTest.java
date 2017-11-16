@@ -25,6 +25,9 @@ public class FileDataManagerImplTest {
     @Test
     public void readDataFile(){
         List<String> list = new ArrayList<>();
+        list.add("5.0 1.0 2.0 5.0 5.0 3.3");
+        list.add("4.0 1.0 2.0 5.0 5.0 3.3");
+        list.add("4.0 1.9 2.0 5.0 5.0 3.3");
         Assert.assertEquals(list, FileDataManagerImpl.getInstance().readDataFile(FILE_NAME));
     }
 }

@@ -29,8 +29,4 @@ public class TestTriangleAction{
         Assert.assertEquals(actual, triangleAction.isRightTriangle(expected));
     }
 
-    @Test(dataProvider = "checkPointsLine", dataProviderClass = TriangleActionDataProvider.class)
-    public void testPointsLine(boolean actual, Triangle expected) throws TriangleException {
-        Assert.assertEquals(actual, triangleAction.checkPointsInLine(expected));
-    }
 }

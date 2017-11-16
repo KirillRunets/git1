@@ -21,7 +21,7 @@ public abstract class AbstractCreator {
             try {
                 double[] coordinates = TriangleParser.getInstance().parseLineToCoordinates(lines.get(i), DELIMETER);
                 if (coordinates != null){
-                    triangles.add(createTriangle(coordinates));
+                    triangles.add(createTriangle(i, coordinates));
                 }
             } catch (ValidationException e) {
                 Logger.error(e);
@@ -31,5 +31,5 @@ public abstract class AbstractCreator {
         return triangles;
     }
 
-    public abstract Triangle createTriangle(double[] coordinates) throws ValidationException;
+    public abstract Triangle createTriangle(int id, double[] coordinates) throws ValidationException;
 }

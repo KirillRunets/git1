@@ -35,6 +35,7 @@ public class FileDataManagerImpl implements FileDataManager {
             triangles = bufferedReader.lines().collect(Collectors.toList());
         } catch (FileNotFoundException e) {
             Logger.fatal(e);
+            throw new RuntimeException(e);
         } catch (IOException e) {
             Logger.error(e);
         }
@@ -61,6 +62,7 @@ public class FileDataManagerImpl implements FileDataManager {
             }
         } catch (FileNotFoundException e) {
             Logger.fatal(e);
+            throw new RuntimeException(e);
         } catch (IOException e) {
             Logger.error(e);
         }

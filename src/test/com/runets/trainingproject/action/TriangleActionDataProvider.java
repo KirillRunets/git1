@@ -33,11 +33,4 @@ public class TriangleActionDataProvider {
         };
     }
 
-    @DataProvider (name = "checkPointsLine")
-    public static Object[][] checkPointsLine(){
-        return new Object[][]{
-                {true, new Triangle(new Point(2.0, 1.0), new Point(2.0, 5.0), new Point(5.0, 3.3))},
-                {true, new Triangle(new Point(2.0, 1.0), new Point(2.0, 5.0), new Point(2.0, 3.3))},
-        };
-    }
 }
